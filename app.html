@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: A JS PROJECT</title>
+    <title>TACO CAT: A JS PROJECT</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top">
-                APP NAME
+                TACO CAT
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,11 +52,54 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <h1>APP UI WILL GO HERE</h1>
-            <input id="message" placeholder="Enter A Message">
-            <div class="p-2">
-                <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+            <div class="row">
+                <div class="col">
+                    <h1>TACOCAT: A Coding Challenge</h1>
+                    <h4 class="lead">The Taco Cat coding challenge is based on the more traditional “Reverse a string”
+                        exercise but ultimately determines if a word or phrase is a palindrome. The Reverse a string
+                        exercise in some form has been used by technology companies such as Amazon, Microsoft, VMware
+                        and Norton to assess a candidate's ability to code an impromptu algorithm.</h4>
+                    <h2 class="mt-5 border-bottom border-3 border-dark">Instructions:</h2>
+                    <h4 class="lead">Write a program that allows a user to enter in a word or phrase and then prints out
+                        the reverse of what was entered.
+                    </h4>
+                    <h4 class="lead">Example: the user enters “developer” the output is “repoleved”.</h4>
+                    <h4 class="lead">Determine if the word or phrase entered by the user is a palindrome. Example:
+                        “Tacocat”.
+                    </h4>
+
+                </div>
+                <div class="col">
+                    <h3 class="border-bottom border-3 border-dark">Enter a string to be <span class="fw-bold">
+                            reversed</span></h3>
+                    <div class="row row-cols-1 row-cols-md-2 mt-5 g-3">
+                        <div class="col">
+                            <label for="inputString" class="fw-bold">Enter String:</label>
+                        </div>
+                        <div class="col">
+                            <input id="inputString" placeholder="Enter A Message">
+                        </div>
+                        <div class="col">
+                            <label for="inputString" class="fw-bold">Results:</label>
+                        </div>
+                        <div class="col">
+                            <div id="alert" class="alert alert-success d-none fade show" role="alert">
+                                <h4 id="alertMsg" class="alert-heading">Result:</h4>
+                                <p id="msg">
+                                    <!-- Content Goes Here -->
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 p-2">
+                            <button id="btnSubmit" class="btn btn-primary p-2">Palindrome?</button>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
+
         </div>
     </main>
 
@@ -116,7 +159,7 @@
     <script src="js/site.js"></script>
 
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getString);
     </script>
 </body>
 

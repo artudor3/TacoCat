@@ -18,7 +18,7 @@ function getString() {
     }
 }
 
-function getData(string) {
+function checkIfPalindrome(string, revStr) {
     let reversedString = '';
     string = string.toLowerCase();
 
@@ -26,11 +26,6 @@ function getData(string) {
         reversedString += string[i];
 
     }
-
-    return reversedString;
-}
-
-function checkIfPalindrome(string, revStr) {
     return string === revStr;
 }
 
