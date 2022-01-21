@@ -2,12 +2,9 @@ function getString() {
     let inputString = document.getElementById("inputString").value;
     if (inputString != "") {
 
-        inputString = inputString.toLowerCase();
-        inputString = inputString.replace(/[^a-zA-Z0-9]/g, "");
+        let returnObj = checkIfPalindrome(inputString)
 
-        let revStr = getData(inputString);
-        let isPalindrome = checkIfPalindrome(inputString, revStr)
-        displayData(inputString, revStr, isPalindrome);
+        displayData(inputString, returnObj);
 
     } else {
         Swal.fire({
@@ -18,18 +15,31 @@ function getString() {
     }
 }
 
-function checkIfPalindrome(string, revStr) {
+function checkIfPalindrome(string) {
     let reversedString = '';
-    string = string.toLowerCase();
+    let isPalindrome = false;
+    let returnObj = {};
+
+        string = string.toLowerCase();
+        string = string.replace(/[^a-zA-Z0-9]/g, "");
+
 
     for (let i = string.length - 1; i >= 0; i--) {
         reversedString += string[i];
 
     }
-    return string === revStr;
+    if (reversedString !== string) {
+        isPalindrome = false;
+    }
+    else {
+        isPalindrome = true;
+    }
+    returnObj["isPalendrome"] = isPalindrome;
+    returnObj["revString"] = reversedString;
+    return returnObj;
 }
 
-function displayData(input, revStr, isPal) {
+function displayData(input, ) {
     document.getElementById("msg").innerHTML = `Your entered string is: <span class="fw-bold">${input}</span>`;
     document.getElementById("msg").innerHTML += `<p>The string reversed is: <span class="fw-bold">${revStr}</span></p>`;
     if (isPal) {
